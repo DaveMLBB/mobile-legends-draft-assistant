@@ -58,9 +58,11 @@ const DraftAssistant = () => {
   }, [team1Picks, team2Picks, userTeam, draftStarted]);
 
   useEffect(() => {
-    const newSuggestions = generateSuggestions();
-    setSuggestions(newSuggestions);
-  }, [generateSuggestions]);
+    if (draftStarted) {
+      const newSuggestions = generateSuggestions();
+      setSuggestions(newSuggestions);
+    }
+  }, [generateSuggestions, draftStarted]);
 
   const handlePick = (hero, team) => {
     if (team1Picks.includes(hero) || team2Picks.includes(hero)) {
