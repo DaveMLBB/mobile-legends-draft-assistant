@@ -94,7 +94,7 @@ const DraftAssistant = () => {
       event.stopPropagation();
       setLocalSearchTerm(event.target.value);
     };
-
+  
     const filteredHeroes = heroes.filter(hero => 
       hero.name.toLowerCase().includes(localSearchTerm.toLowerCase()) ||
       hero.role.toLowerCase().includes(localSearchTerm.toLowerCase())
@@ -130,11 +130,18 @@ const DraftAssistant = () => {
                     }}
                     variant="outlined"
                     fullWidth
-                    style={{ height: '80px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
+                    style={{ 
+                      height: '60px', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      textAlign: 'center',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word'
+                    }}
                     disabled={team1Picks.includes(hero) || team2Picks.includes(hero)}
                   >
-                    <Avatar style={{ marginBottom: '4px' }}>{hero.name[0]}</Avatar>
-                    <Typography variant="caption">{hero.name}</Typography>
+                    <Typography variant="body2">{hero.name}</Typography>
                   </Button>
                 </Grid>
               ))}
