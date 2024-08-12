@@ -197,7 +197,6 @@ const DraftAssistant = () => {
                   fullWidth
                   style={{ justifyContent: 'flex-start', padding: '8px' }}
                 >
-                  <Avatar style={{ marginRight: '8px' }}>{hero.name[0]}</Avatar>
                   <Typography variant="body2">{hero.name} ({hero.role})</Typography>
                 </Button>
               ))}
