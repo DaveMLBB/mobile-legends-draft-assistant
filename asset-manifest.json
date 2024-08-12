@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mobile-legends-draft-assistant/static/css/main.e6c13ad2.css",
+    "main.js": "/mobile-legends-draft-assistant/static/js/main.398b7ee1.js",
+    "static/js/488.09db5ddf.chunk.js": "/mobile-legends-draft-assistant/static/js/488.09db5ddf.chunk.js",
+    "index.html": "/mobile-legends-draft-assistant/index.html",
+    "main.e6c13ad2.css.map": "/mobile-legends-draft-assistant/static/css/main.e6c13ad2.css.map",
+    "main.398b7ee1.js.map": "/mobile-legends-draft-assistant/static/js/main.398b7ee1.js.map",
+    "488.09db5ddf.chunk.js.map": "/mobile-legends-draft-assistant/static/js/488.09db5ddf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.398b7ee1.js"
+  ]
+}
