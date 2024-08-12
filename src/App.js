@@ -27,6 +27,8 @@ const DraftAssistant = () => {
   }, [team1Picks, team2Picks, draftStarted, currentTurnIndex, userTeam]);
 
   const generateSuggestions = useCallback(() => {
+    if (!draftStarted || !userTeam) return [];
+
     const currentTeamPicks = userTeam === 'team1' ? team1Picks : team2Picks;
     const enemyTeamPicks = userTeam === 'team1' ? team2Picks : team1Picks;
     
@@ -53,14 +55,12 @@ const DraftAssistant = () => {
     });
 
     return scoredHeroes.sort((a, b) => b.score - a.score).slice(0, 3);
-  }, [team1Picks, team2Picks, userTeam]);
+  }, [team1Picks, team2Picks, userTeam, draftStarted]);
 
   useEffect(() => {
-    if (draftStarted) {
-      const newSuggestions = generateSuggestions();
-      setSuggestions(newSuggestions);
-    }
-  }, [generateSuggestions, draftStarted]);
+    const newSuggestions = generateSuggestions();
+    setSuggestions(newSuggestions);
+  }, [generateSuggestions]);
 
   const handlePick = (hero, team) => {
     if (team1Picks.includes(hero) || team2Picks.includes(hero)) {
