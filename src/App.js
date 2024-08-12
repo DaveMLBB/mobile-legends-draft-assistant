@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { 
   Card, CardContent, CardHeader, Typography, Button, Avatar, 
   Radio, RadioGroup, FormControlLabel, Dialog, DialogContent, 
@@ -26,7 +26,7 @@ const DraftAssistant = () => {
     }
   }, [team1Picks, team2Picks, draftStarted, currentTurnIndex, userTeam]);
 
-  const generateSuggestions = () => {
+  const generateSuggestions = useCallback(() => {
     const currentTeamPicks = userTeam === 'team1' ? team1Picks : team2Picks;
     const enemyTeamPicks = userTeam === 'team1' ? team2Picks : team1Picks;
     
@@ -53,7 +53,14 @@ const DraftAssistant = () => {
     });
 
     return scoredHeroes.sort((a, b) => b.score - a.score).slice(0, 3);
-  };
+  }, [team1Picks, team2Picks, userTeam]);
+
+  useEffect(() => {
+    if (draftStarted) {
+      const newSuggestions = generateSuggestions();
+      setSuggestions(newSuggestions);
+    }
+  }, [generateSuggestions, draftStarted]);
 
   const handlePick = (hero, team) => {
     if (team1Picks.includes(hero) || team2Picks.includes(hero)) {
