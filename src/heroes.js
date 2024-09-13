@@ -3,8 +3,11 @@ const heroes = [
       id: 1,
       name: "Aamon",
       role: "Assassin",
-      counters: [2, 15, 65],
-      favoriteAllies: [7, 32, 60]
+      counters: [98, 67, 50, 99, 96, 44, 55, 19, 
+        14, 13, 10, 8, 5, 117, 110, 102, 90 , 105,
+        89, 74, 33, 31, 107, 7, 79, 61, 36, 16, 15, 4, 2, 104
+      ],
+      favoriteAllies: [7, 32, 60, 109, 77, 118, 96, 99, 114, 26, 31, 65]
     },
     {
       id: 2,
@@ -59,7 +62,7 @@ const heroes = [
       id: 9,
       name: "Atlas",
       role: "Tank",
-      counters: [22, 32, 79],
+      counters: [22, 32, 79, 2],
       favoriteAllies: [24, 60, 74]
     },
     {
@@ -810,6 +813,20 @@ const heroes = [
         role: "Fighter",
         counters: [29, 61, 94],
         favoriteAllies: [7, 32, 79]
+      },
+      {
+        id: 117,
+        name: "Yu Zhong",
+        role: "Fighter",
+        counters: [],
+        favoriteAllies: []
+      },
+      {
+        id: 118,
+        name: "Floryn",
+        role: "Support",
+        counters: [],
+        favoriteAllies: []
       }
     ];
     
